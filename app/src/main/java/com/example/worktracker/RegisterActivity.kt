@@ -38,7 +38,7 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         progressbar = findViewById(R.id.progressBar)
         textView = findViewById(R.id.loginNow)
 
-        textView.setOnClickListener{
+        textView.setOnClickListener {
             val intent = Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)
             finish()
@@ -77,9 +77,6 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
                     }
                 }
         }
-
-
-
 
 
         val spinner: Spinner = findViewById(R.id.Territory)

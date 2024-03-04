@@ -13,6 +13,9 @@
     <string name="click_to_login">click to login</string>
     <string name="click_to_register">Click to Register</string>
     <string name="logout">Logout</string>
+    <string name="productList">Product List Page</string>
+    <string name="back">Back</string>
+    <string name="products">Products</string>
 
     <string-array name="Territories">
         <item>North Luzon</item>
@@ -32,6 +35,5 @@
         <item>South Mindanao 2</item>
         <item>South Mindanao 3</item>
         <item>East Mindanao</item>
-
     </string-array>
 </resources>

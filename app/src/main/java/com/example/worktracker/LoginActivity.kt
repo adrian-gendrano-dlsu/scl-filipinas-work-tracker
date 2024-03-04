@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         buttonLogin = findViewById(R.id.btn_login)
         progressbar = findViewById(R.id.progressBar)
         textView = findViewById(R.id.RegisterNow)
-        textView.setOnClickListener{
+        textView.setOnClickListener {
             val intent = Intent(applicationContext, RegisterActivity::class.java)
             startActivity(intent)
             finish()
@@ -72,13 +72,18 @@ class LoginActivity : AppCompatActivity() {
                     progressbar.visibility = View.GONE
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
-                        Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                            .show()
                         val intent = Intent(applicationContext, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
                         // If sign in fails, display a message to the user.
-                        Toast.makeText(applicationContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            applicationContext,
+                            "Authentication failed.",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
 
