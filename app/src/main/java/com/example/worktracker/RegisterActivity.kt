@@ -1,7 +1,9 @@
 package com.example.worktracker
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -16,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -36,7 +39,7 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         editTextPassword = findViewById(R.id.password)
         buttonReg = findViewById(R.id.btn_register)
         progressbar = findViewById(R.id.progressBar)
-        textView = findViewById(R.id.loginNow)
+        textView = findViewById(R.id.   loginNow)
 
         textView.setOnClickListener{
             val intent = Intent(applicationContext, LoginActivity::class.java)
@@ -48,18 +51,21 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
         buttonReg.setOnClickListener {
             progressbar.visibility = View.VISIBLE
-            val email: String = editTextEmail.text.toString()
-            val password: String = editTextPassword.text.toString()
+            val email: String = editTextEmail.text.toString().trim();
+            val password: String = editTextPassword.text.toString().trim();
 
             if (email.isEmpty()) {
                 Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show()
+                progressbar.visibility = View.GONE
                 return@setOnClickListener
             }
 
             if (password.isEmpty()) {
                 Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show()
+                progressbar.visibility = View.GONE
                 return@setOnClickListener
             }
+
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     progressbar.visibility = View.GONE
@@ -69,18 +75,21 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
                         Toast.makeText(baseContext, "Account Created", Toast.LENGTH_SHORT)
                             .show()
                     } else {
-                        // If sign in fails, display a message to the user.
-
-                        Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT)
-                            .show()
-
+                        try {
+                            Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                            throw task.exception!!;
+                        }
+                        catch(e: FirebaseAuthInvalidCredentialsException) {
+                            Toast.makeText(baseContext, "Invalid Email Format", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                        catch(e: Exception) {
+                            Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT)
+                                .show()
+                        }
                     }
                 }
         }
-
-
-
-
 
         val spinner: Spinner = findViewById(R.id.Territory)
 // Create an ArrayAdapter using the string array and a default spinner layout.
