@@ -55,8 +55,8 @@ class LoginActivity : AppCompatActivity() {
 
         buttonLogin.setOnClickListener {
             progressbar.visibility = View.VISIBLE
-            val email: String = editTextEmail.text.toString()
-            val password: String = editTextPassword.text.toString()
+            val email: String = editTextEmail.text.toString().trim()
+            val password: String = editTextPassword.text.toString().trim()
 
             if (email.isEmpty()) {
                 Toast.makeText(this, "Enter Email", Toast.LENGTH_SHORT).show()
