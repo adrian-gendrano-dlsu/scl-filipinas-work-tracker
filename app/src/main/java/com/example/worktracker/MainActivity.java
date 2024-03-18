@@ -10,39 +10,47 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity{
+    // Comment to make login-free
     FirebaseAuth auth;
-    Button logoutBtn;
-    Button productListBtn;
-    TextView textView;
     FirebaseUser user;
 
+    Button button;
+    TextView textViewEmail;
+    TextView textViewName;
+    List<String> data = new ArrayList<String>();
+    String name;
+    String address;
+    String contactNumber;
+    String territory;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
+        // Comment to make login-free
         auth = FirebaseAuth.getInstance();
-        productListBtn = findViewById(R.id.productListBtn);
-        logoutBtn = findViewById(R.id.logout);
-        textView = findViewById(R.id.user_details);
         user = auth.getCurrentUser();
 
+        button = findViewById(R.id.logout);
+        textViewEmail = findViewById(R.id.userEmail);
+        textViewName = findViewById(R.id.userName);
+
+        // Comment to make login-free
         if (user == null) {
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
             finish();
         } else {
-            textView.setText(user.getEmail());
+            textViewEmail.setText(user.getEmail());
+            //FirebaseDatabase.getInstance().getReference();
         }
 
-        productListBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), PLPageActivity.class);
-            startActivity(intent);
-            finish();
-        });
-
-        logoutBtn.setOnClickListener(v -> {
+        button.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);

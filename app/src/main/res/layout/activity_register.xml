@@ -30,6 +30,21 @@
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -49,7 +64,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/Address"
+            android:id="@+id/address"
             android:hint="@string/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -62,7 +77,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ContactNumber"
+            android:id="@+id/contactNumber"
             android:hint="@string/contact_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -78,7 +93,7 @@
         android:textSize="15sp"
         android:layout_marginStart="2dp"/>
     <Spinner
-        android:id="@+id/Territory"
+        android:id="@+id/territory"
         android:text="@string/territory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,19 +101,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:hint="@string/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </com.google.android.material.textfield.TextInputEditText>
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar
         android:layout_width="wrap_content"

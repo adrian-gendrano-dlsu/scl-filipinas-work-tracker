@@ -8,10 +8,18 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/userEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/user_details"
-        android:text="Hello World!"/>
+        android:text="Email"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
@@ -24,5 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/productList" />
+
+    <Button
+        android:id="@+id/activityTrackerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activityTracker" />
 
 </LinearLayout>

@@ -13,9 +13,23 @@
     <string name="click_to_login">click to login</string>
     <string name="click_to_register">Click to Register</string>
     <string name="logout">Logout</string>
+
     <string name="productList">Product List Page</string>
     <string name="back">Back</string>
     <string name="products">Products</string>
+
+    <string name="activityTracker">Activity Tracker</string>
+    <string name="activities">Activities</string>
+    <string name="date">Date</string>
+    <string name="typeActivity">Type of Activity</string>
+    <string name="targetCrops">Target Crops</string>
+    <string name="attendance">Attendance</string>
+    <string name="productSales">Product Sales</string>
+    <string name="activityCost">Activity Cost</string>
+    <string name="status">Status</string>
+
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
 
     <string-array name="Territories">
         <item>North Luzon</item>
@@ -35,5 +49,6 @@
         <item>South Mindanao 2</item>
         <item>South Mindanao 3</item>
         <item>East Mindanao</item>
+
     </string-array>
 </resources>
