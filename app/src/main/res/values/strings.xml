@@ -30,6 +30,7 @@
 
     <string name="save">Save</string>
     <string name="saved">Saved</string>
+    <string name="empty">At least 1 field is empty</string>
 
     <string-array name="Territories">
         <item>North Luzon</item>
