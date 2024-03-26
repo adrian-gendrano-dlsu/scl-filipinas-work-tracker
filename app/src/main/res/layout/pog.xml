@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/pog_month"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="@+id/pog_date"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/pog_date"
+        app:layout_constraintTop_toBottomOf="@+id/pog_date" />
+
+    <Spinner
+        android:id="@+id/pog_inventory"
+        android:layout_width="256dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="@+id/pog_type"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pog_type"
+        app:layout_constraintTop_toBottomOf="@+id/pog_type" />
+
+    <Button
+        android:id="@+id/pog_date"
+        style="?android:spinnerStyle"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="92dp"
+        android:onClick="openDatePicker"
+        android:paddingLeft="8dp"
+        android:paddingTop="1dp"
+        android:text="JAN 01 2024"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="15sp"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/pog_type"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="@+id/pog_month"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pog_month"
+        app:layout_constraintTop_toBottomOf="@+id/pog_month" />
+
+    <Button
+        android:id="@+id/pog_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="484dp"
+        android:text="Continue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pog_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Cancel"
+        app:layout_constraintStart_toEndOf="@+id/pog_continue"
+        app:layout_constraintTop_toBottomOf="@+id/pog_continue" />
+
+    <Button
+        android:id="@+id/pog_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Save"
+        app:layout_constraintEnd_toStartOf="@+id/pog_continue"
+        app:layout_constraintTop_toBottomOf="@+id/pog_continue" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="36dp"
+        android:text="Date"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/pog_date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="36dp"
+        android:text="Month"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/pog_month"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="36dp"
+        android:text="Type"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/pog_type"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="94dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="24dp"
+        android:text="Inventory"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/pog_inventory"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

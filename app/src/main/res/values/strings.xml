@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">WorkTracker_POG_Sales</string>
+
+    <string-array name="Months">
+        <item> </item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string-array name="Types">
+        <item> </item>
+        <item>Dealer</item>
+        <item>Individual Customer</item>
+    </string-array>
+
+    <string-array name="Inventories">
+        <item> </item>
+        <item>Inventories</item>
+        <item>Inventories2</item>
+        <item>Inventories3</item>
+        <item>Inventories4</item>
+        <item>Inventories5</item>
+        <item>Inventories6</item>
+    </string-array>
+
+
+    <string-array name="Customer">
+        <item> </item>
+        <item>Individual Farmer</item>
+        <item>Direct Dealer</item>
+        <item>Non Direct Dealer</item>
+    </string-array>
+
+    <string-array name="Products">
+        <item> </item>
+        <item>Product</item>
+        <item>Product2</item>
+        <item>Product3</item>
+        <item>Product4</item>
+        <item>Product5</item>
+        <item>Product6</item>
+    </string-array>
+
+</resources>
