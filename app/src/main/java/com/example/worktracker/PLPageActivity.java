@@ -28,7 +28,7 @@ public class PLPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_productlist);
 
         // Initialize Firebase Database
-        FirebaseDatabase database = FirebaseDatabase.getInstance("your_database_url"); //TODO: Replace
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://scl-filipinas-work-tracker-default-rtdb.asia-southeast1.firebasedatabase.app/"); //TODO: Replace
         DatabaseReference productsRef = database.getReference("Products");
 
         // Initialize UI components

@@ -28,7 +28,7 @@ public class ActivityTrackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_activitytrack);
 
         // Initialize Firebase
-        FirebaseDatabase database = FirebaseDatabase.getInstance("your_database_url"); // Replace with your database URL
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://scl-filipinas-work-tracker-default-rtdb.asia-southeast1.firebasedatabase.app/a"); // Replace with your database URL
         DatabaseReference activitiesRef = database.getReference("Activities");
         DatabaseReference activityTypeRef = database.getReference("ActivityTypes");
         DatabaseReference cropRef = database.getReference("Crops");

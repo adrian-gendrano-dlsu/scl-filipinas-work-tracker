@@ -8,21 +8,22 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
     // Comment to make login-free
-//    FirebaseAuth auth;
-//    FirebaseUser user;
+    FirebaseAuth auth;
+    FirebaseUser user;
 
     Button logoutBtn;
     Button productListBtn;
     Button activityTrackerBtn;
     TextView textViewEmail;
     TextView textViewName;
-    List<String> data = new ArrayList<String>();
+    List<String> data = new ArrayList<>();
     String name;
     String address;
     String contactNumber;
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.main_activity);
 
         // Comment to make login-free
-//        auth = FirebaseAuth.getInstance();
-//        user = auth.getCurrentUser();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 
         logoutBtn = findViewById(R.id.logout);
         productListBtn = findViewById(R.id.productListBtn);
@@ -44,14 +45,14 @@ public class MainActivity extends AppCompatActivity{
         textViewName = findViewById(R.id.userName);
 
         // Comment to make login-free
-//        if (user == null) {
-//            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//            startActivity(intent);
-//            finish();
-//        } else {
-//            textViewEmail.setText(user.getEmail());
-//            //FirebaseDatabase.getInstance().getReference();
-//       }
+        if (user == null) {
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            textViewEmail.setText(user.getEmail());
+            //FirebaseDatabase.getInstance().getReference();
+       }
 
         productListBtn.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), PLPageActivity.class);
