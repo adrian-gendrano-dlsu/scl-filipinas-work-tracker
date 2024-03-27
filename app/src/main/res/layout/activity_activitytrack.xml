@@ -77,7 +77,13 @@
         android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/save" />
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/pushToDbButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Push to Database" />
 
     <Button
         android:id="@+id/goBackBtn"
