@@ -23,6 +23,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ActivityTrackActivity extends AppCompatActivity {
     private TextView status;
@@ -109,13 +111,28 @@ public class ActivityTrackActivity extends AppCompatActivity {
     }
 
     private void pushDataToDb() {
-        String data = getDataAsString();
-        if (data.contains("\n,,,")) { // Checks if any essential field is empty
+        // Corrected method to push data into Firebase database
+        String date = dateField.getText().toString();
+        String targetCrop = targetCropsField.getSelectedItem().toString();
+        String attendance = attendanceField.getText().toString();
+        String productSales = productSalesField.getText().toString();
+        String activityCost = activityCostField.getText().toString();
+
+        if (date.isEmpty() || targetCrop.isEmpty() || attendance.isEmpty() || productSales.isEmpty() || activityCost.isEmpty()) {
             status.setText(getString(R.string.empty));
-        } else {
-            activitiesRef.push().setValue(data.replace("\n", ","));
-            status.setText("Pushed to database");
+            return;
         }
+
+        Map<String, Object> dataToSave = new HashMap<>();
+        dataToSave.put("date", date);
+        dataToSave.put("targetCrop", targetCrop);
+        dataToSave.put("attendance", attendance);
+        dataToSave.put("productSales", productSales);
+        dataToSave.put("activityCost", activityCost);
+
+        activitiesRef.push().setValue(dataToSave)
+                .addOnSuccessListener(aVoid -> status.setText("Pushed to database"))
+                .addOnFailureListener(e -> status.setText("Failed to push data to database"));
     }
 
     private String getDataAsString() {
